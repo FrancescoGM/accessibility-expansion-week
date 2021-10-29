@@ -39,7 +39,6 @@ export default function Home(): JSX.Element {
   }
 
   function handleKeyDown(event: KeyboardEvent<HTMLButtonElement>): void {
-    // event.preventDefault()
     const { key } = event
     const activeTab = document.querySelector(`#${selectedTab}`)
 
@@ -61,6 +60,16 @@ export default function Home(): JSX.Element {
       setSelectedTab(nextTab?.id)
       nextTab?.focus()
     }
+    if (key === 'Home') {
+      const nextTab = activeTab?.parentElement?.firstElementChild as HTMLElement
+      setSelectedTab(nextTab?.id)
+      nextTab?.focus()
+    }
+    if (key === 'End') {
+      const nextTab = activeTab?.parentElement?.lastElementChild as HTMLElement
+      setSelectedTab(nextTab?.id)
+      nextTab?.focus()
+    }
   }
 
   return (
@@ -70,7 +79,7 @@ export default function Home(): JSX.Element {
       </Head>
       <HomeContainer>
         <HomeContent>
-          <HomeTabs onKeyDown={handleKeyDown}>
+          <HomeTabs onKeyDown={handleKeyDown} aria-label="Tag panel">
             <Tab
               id="tab-1"
               isActive={selectedTab === 'tab-1'}
@@ -89,7 +98,11 @@ export default function Home(): JSX.Element {
             </Tab>
           </HomeTabs>
           {selectedTab === 'tab-1' && (
-            <HomeForm ref={formRef} onSubmit={handleSubmitSignIn}>
+            <HomeForm
+              ref={formRef}
+              onSubmit={handleSubmitSignIn}
+              aria-label="SignIn form"
+            >
               <Input
                 name="email"
                 type="email"
@@ -103,11 +116,7 @@ export default function Home(): JSX.Element {
                 placeholder="Digite sua senha"
                 leftIcon={<IoLockClosedOutline />}
               />
-              <Button
-                type="submit"
-                variant="outline"
-                rightIcon={<IoArrowForwardOutline />}
-              >
+              <Button type="submit" rightIcon={<IoArrowForwardOutline />}>
                 CADASTRAR
               </Button>
             </HomeForm>

@@ -64,6 +64,7 @@ export function PasswordInput({
           onFocus={clearError}
           defaultValue={defaultValue}
           disabled={disabled}
+          {...(error ? { 'aria-invalid': 'true' } : {})}
           {...rest}
         />
         <button
@@ -77,7 +78,7 @@ export function PasswordInput({
       </div>
       {error && (
         <span>
-          <IoAlertCircleOutline />
+          <IoAlertCircleOutline aria-label="Error icon" />
           {error}
         </span>
       )}

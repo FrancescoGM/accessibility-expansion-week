@@ -56,12 +56,13 @@ export function Input({
           onChange={handleChange}
           onFocus={clearError}
           defaultValue={defaultValue}
+          {...(error ? { 'aria-invalid': 'true' } : {})}
           {...rest}
         />
       </div>
       {error && (
         <span>
-          <IoAlertCircleOutline />
+          <IoAlertCircleOutline aria-label="Error icon" />
           {error}
         </span>
       )}
