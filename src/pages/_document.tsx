@@ -1,3 +1,4 @@
+// eslint-disable-next-line @next/next/no-document-import-in-page
 import Document, {
   Html,
   Head,
@@ -6,6 +7,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps
 } from 'next/document'
+
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -36,7 +38,7 @@ export default class MyDocument extends Document {
     }
   }
 
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="pt-br">
         <Head>

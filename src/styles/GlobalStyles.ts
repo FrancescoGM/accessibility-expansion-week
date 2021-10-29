@@ -32,7 +32,8 @@ export const GlobalStyles = createGlobalStyle`
   textarea,
   select,
   button {
-    font: 400 1rem ${props => props.theme.fontFamilies.default}, sans-serif;
+    font: 400 ${props => props.theme.fontSizes.md} ${props =>
+  props.theme.fontFamilies.default}, sans-serif;
   }
 
   button {

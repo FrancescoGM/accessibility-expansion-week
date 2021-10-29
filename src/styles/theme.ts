@@ -47,15 +47,15 @@ export const theme = {
     taller: '180%'
   },
   borderRadius: {
-    xs: '4',
-    pill: '9999',
-    sm: '8',
-    md: '12'
+    xs: '4px',
+    pill: '9999px',
+    sm: '8px',
+    md: '12px'
   },
   borderWidths: {
-    thin: '1',
-    mid: '2',
-    thick: '4'
+    thin: '1px',
+    mid: '2px',
+    thick: '4px'
   },
   spacing: {
     '0': '0',
