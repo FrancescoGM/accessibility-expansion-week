@@ -1,3 +1,15 @@
+import Head from 'next/head'
+import { HomeContainer } from '../styles/pages/home'
+
 export default function Home(): JSX.Element {
-  return <h1>Hello World</h1>
+  return (
+    <>
+      <Head>
+        <title>Home | Study</title>
+      </Head>
+      <HomeContainer>
+        <h1>Study</h1>
+      </HomeContainer>
+    </>
+  )
 }
